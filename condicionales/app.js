@@ -1,4 +1,5 @@
-// EJERCICIOS CONDICIONALES PARTE 1
+// EJERCICIOS CONDICIONALES PARTE 1////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // EJERCICIO 1
 ////////////
@@ -78,9 +79,79 @@ switch (day.toLowerCase()) {
 
 //   EJERCICIO 6
 ////////////////
-let number = parseFloat(prompt("Dime un número y hago el cálculo al cuadrado y al cubo:"))
+/* let number = parseFloat(prompt("Dime un número y hago el cálculo al cuadrado y al cubo:"))
 
 while(number < 1) {
     number = parseFloat(prompt("Debes escribir un número mayor que 1!"));
 }
 alert(`${number} al cuadrado es: ${Math.pow(number, 2)} y al cubo es: ${Math.pow(number, 3)}.`);
+ */
+
+// EJERCICIO 7
+//////////////
+/* let numerador = parseFloat(prompt("Dime un numerador"));
+let denominador = parseFloat(prompt("Dime un denominador"));
+
+while (denominador === 0) denominador = parseFloat(prompt("El denominador no puede ser 0 !!"));
+alert(`El resultado es ${numerador / denominador}`); */
+
+// EJERCICIO 8
+//////////////
+/* let numbers = prompt("Dime 2 números separados por ',':").split(',');
+let num1 = parseFloat(numbers[0]);
+let num2 = parseFloat(numbers[1]);
+
+if (num1 > num2)  alert(`${num1} es mayor que ${num2}`);
+else if(num1 === num2) alert(`${num1} es igual que ${num2}`);
+else alert(`${num1} es menor que ${num2}`); */
+
+
+// EJERCICIOS CONDICIONALES PARTE 2////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// EJERCICIO X
+//////////////
+/* let temperature = parseFloat(prompt("Dime la temperatura que hace:"));
+
+switch (true) {
+    case temperature > 40:
+        alert("Si hace más de 40 grados, vete a otro sitio");
+        break;
+
+    case (temperature > 30 && temperature < 40):
+        alert("enciende el aire acondicionado");
+        break;
+
+    case (temperature > 20 && temperature < 30):
+        alert("No hagas nada!");
+        break;
+
+    case (temperature > 10 && temperature < 20):
+        alert("Enciende la calefacción");
+        break;
+    
+    case (temperature < 10):
+        alert("Si hace menos de 10 grados. Vete a otro sitio");
+        break;
+    
+    default:
+        alert("Escribe un valor numérico válido");
+}; */
+
+// EJERCICIO 9
+//////////////
+/* let numbers = prompt("Dime 2 números separados por ',':").split(',');
+let num1 = parseFloat(numbers[0]);
+let num2 = parseFloat(numbers[1]);
+
+if(num1 === num2) {
+        alert("Los dos números son iguales. Mostrando 0");
+
+    } else if (num1 % 6 === num2 % 6) {
+        num1 < num2 ? alert(` Te muestro el menor: ${num1}`) : alert(`Te muestro el menor: ${num2}`);
+
+    } else num1 > num2 ? alert(` Te muestro el mayor: ${num1}`) : alert(`Te muestro el mayor: ${num2}`);
+  */
+
+// EJERCICIO 10
+///////////////
