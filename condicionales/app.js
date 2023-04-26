@@ -155,3 +155,196 @@ if(num1 === num2) {
 
 // EJERCICIO 10
 ///////////////
+// Pedimos datos al usuario y lo grabamos en variables
+
+/*         // de tipo string
+
+        let enteroString1 = prompt('Dime un valor entre 25 y 75');
+
+        let enteroString2 = prompt('Dime otro valor entre 25 y 75');
+
+
+
+
+        // Las variables de tipo string las transformamos en numéricas
+
+        let num1 = parseInt(enteroString1);
+
+        let num2 = parseInt(enteroString2);
+
+
+
+
+        // Creo condicional. Para entrar, num1 y num2 tienen que estar en el rango
+
+        // de 25 a 75
+
+
+
+
+        if ((num1 >= 25) && (num1 <= 75) && (num2 >= 25) && (num2 <= 75)) {
+
+            // Cumplo condición, pues voy a grabar todos los números de dentro de
+
+            // num1 y num2 (por ejemplo, 74 y 26, guardaré el 7, 4, 2 y 6)
+
+            let string1 = enteroString1.substring(0, 1); // siguiendo ejemplo, el 7
+
+            let string2 = enteroString1.substring(1); // el 4
+
+            let string3 = enteroString2.substring(0, 1); // el 2
+
+            let string4 = enteroString2.substring(1); // el 6.
+
+
+
+
+            // Vamos a comprobar si hay coincidencias
+
+
+
+
+            if (string1 === string3 || string1 === string4 || string2 === string3 || string2 === string4) {
+
+                alert('Hay dos números iguales');
+
+            } else {
+
+                alert('NO hay dos números iguales')
+
+            }
+
+        } else {
+
+            alert('los números seleccionados no se encuentran en el rango');
+
+        };
+
+*/
+
+const condition20 = function() {
+
+
+
+}
+
+
+
+
+const condition21 = function() {
+    const age = parseInt(prompt("Necesitamos saber tu edad para alquilar el coche:"));
+    const datos = {
+        name: '',
+        surname: '',
+        city: '',
+        daysBooking: 0,
+        totalCost: 0
+    };
+    const price = 25;
+    const weekCost = 150;
+
+    if(age < 18) return alert("Eres menor de edad. No puedes alquilar un coche todavía");
+    else {
+        const tieneCarnet = prompt("Tienes el carnet de conducir?").toLowerCase().trim();
+
+        if(!isNaN(parseInt(tieneCarnet))) {
+            return alert("Escribe 'si' o 'no'");
+        } else {
+            if(tieneCarnet === 'si') {
+                alert("El coste del coche tiene un coste de 25€ por dia. En caso que lo alquile una semana, el coste será de 150€");
+                datos.name = prompt("Nombre");
+                datos.surname = prompt("apellido");
+                datos.city = prompt("ciudad de recogida");
+                datos.daysBooking = parseInt(prompt("dias de alquiler"));
+
+                if(datos.daysBooking === 7) datos.totalCost = `${weekCost}€`;
+                else datos.totalCost = `${price * datos.daysBooking}€`;
+
+                
+            } else return alert("No puedes alquilar un coche sin carnet");
+        };    
+    };
+    
+    let datosValues = Object.keys(datos);
+    alert(`
+        -${datosValues[0].toUpperCase}: ${datos.name}
+        -${datosValues[1].toUpperCase}: ${datos.surname}
+        -${datosValues[2].toUpperCase}: ${datos.city}
+        -${datosValues[3].toUpperCase}: ${datos.daysBooking}
+        -${datosValues[4].toUpperCase}: ${datos.totalCost}
+    `);   
+    
+};
+
+// OPERADORES LÓGICOS Y CONDICIONALES TERNARIOS /////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// EJERCICIO 2
+//////////////
+
+const ejercicio2 = function(){
+    let edadMayor = parseInt(prompt("Dime la edad de tu hijo mayor:"));
+    let diffAge = parseInt(prompt("Dime los años de diferencia entre el mayor y el menor:"));
+    let edadMenor = edadMayor - diffAge;
+
+    if(Number.isNaN(edadMayor || Number.isNaN(diffAge))){
+        alert("Debes introducir un valor numérico!!");
+    } else edadMenor > 18 ? alert(`El hijo menor tiene ${edadMenor} es mayor de edad`) : alert(`El hijo menor tiene ${edadMenor}. No es mayor de edad`);
+}; 
+
+// EJERCICIO 3
+//////////////
+
+const ejercicio3 = function(){
+    let word = prompt("Dime tu palabra favorita! :D");
+    word.includes('r') ?  alert(`Guay! ${word} incluye la letra d!`) :  alert (`${word} no incluye la letra d :(`);
+};
+
+// EJERCICIO 4
+//////////////
+
+const ejercicio4 = function() {
+    let num = parseFloat(prompt("Dime un número:"));
+    !Math.abs(num) ? alert(`${num}`) : alert(`${Math.abs(num)}`);
+};
+
+// EJERCICIO 5
+//////////////
+const ejercicio5 = function(){
+    let password = prompt("Escribe una contraseña");
+
+    while (password.length < 8) password = prompt("La contraseña tiene que tener un mínimo de 8 caracteres!");
+    alert("Contraseña registrada!");
+};
+
+// EJERCICIO 6
+//////////////
+
+const ejercicio6 = function() {
+
+    let puesto = parseInt(prompt("Dime cómo quedaste en la carrera (en números)"));
+
+    while (isNaN(puesto)) puesto = parseInt(prompt("Debes escribir un valor numérico"));
+
+    const app1 = a => a === 1 ? "Ganaste" : "Lo importante es participar!!";
+
+    const app2 = a => {
+        
+        let resultado =  
+        a === 1 ? "Medalla de oro" : 
+        a === 2 ? "Medalla de plata" :
+        a === 3 ? "Medalla de bronce!" :
+        a > 3 ? "Lo importante es participar" : "Erro: valor no definido"
+        return resultado;        
+    };
+
+    const app3 = a => a > 0 && a <= 3 ? "Sube al podium" : "Se acabó la carrera"; 
+
+    return console.log(`
+    a)${app1(puesto)};
+    b)${app2(puesto)};
+    c)${app3(puesto)};
+    `);    
+};
+
+
