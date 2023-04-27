@@ -158,7 +158,7 @@ console.log("The car is ", car, " and the distance is ", distance, "km, so the d
 */
 problemNumber(8);
 
-const car = "manual";
+/* const car = "manual";
 const driver = null;
 const distance = 12;
 if(car === "manual") {
@@ -166,7 +166,7 @@ if(car === "manual") {
 } else {
   driver === "Diego"
   
-}
+} */
 
 /*
 9)
