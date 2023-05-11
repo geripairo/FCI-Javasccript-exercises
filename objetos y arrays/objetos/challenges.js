@@ -171,7 +171,7 @@ Assegura't de que el teu codi segueix funcionant!
 ////////////////////////////////////////////////////////////////////////////////
 
 
-let randomObject ={
+/* let randomObject ={
   "halfway": -597578084,
   "oldest": "limited",
   "them": {
@@ -304,7 +304,7 @@ let randomObject ={
 }
 
 
-/* console.log(randomObject.them.speed.past.program.grade.addition.whose.national.cannot.board);
+console.log(randomObject.them.speed.past.program.grade.addition.whose.national.cannot.board);
 randomObject.them.speed.past.program.grade.addition.whose.national.cannot.drink = "Coca-cola";
 console.log(randomObject.them.speed.past.program.grade.addition.whose.national.cannot.drink);
 let nombre = prompt("Dime tu nombre").trim().toLowerCase();
@@ -650,7 +650,7 @@ console.log(`Te llamarás: ${letraNombre[name[0]][gender]} ${letraApellido[surna
  */
 
 
-let personas = {
+/* let personas = {
     BridgetteMcGuire: {
       _id: "5d8a48131595639a1e4fa996",
       index: 0,
@@ -850,3 +850,4 @@ let personas = {
         console.log(`${data}: ${personas[nombre][data]}`);
     };
   };
+ */
