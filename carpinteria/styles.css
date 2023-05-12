@@ -4,8 +4,11 @@
   src: url("./font/Stardew_Valley.ttf") format("truetype");
 }
 
+*{
+  box-sizing: border-box;
+}
 body{
-  margin: auto 0;
+  margin: 0;
   background: url(https://stardewvalley.net/wp-content/uploads/2017/12/stardewbackground.png) no-repeat 
   fixed center center /cover;
   image-rendering: pixelated;
@@ -14,20 +17,117 @@ body{
   font-size: 17px;
 }
 
-.robin_container{
-  box-sizing: border-box;
-  margin: 0 auto;
+/* HEADER AND NAV STYLES --------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------*/
+header{
   width: 100%;
-  margin-bottom: 25px;
+  background-color: rgba(21, 71, 148, 0.8);
+  height: 55px;
+  text-transform: uppercase;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+nav{
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 55px;
+  
+}
+
+nav ul{
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+nav ul li{
+  display: inline-block;
+  margin: 0px 20px;
+}
+
+.nav_link{
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+.nav_link:hover {
+  color: #F9EC88;
+  transition: all 0.2s;
+}
+ nav ul li:first-of-type {
+  margin-left: 0;
+ }
+
+ nav ul li:last-of-type{
+  margin-right: 0;
+ }
+
+ /* LANDING SECTION ---------------------------------------------------------------------------------
+ ---------------------------------------------------------------------------------------------------
+  */
+
+#landing_wrapper{
+  width: 100%;
+  height: 100%;
+  min-height: 750px;
+  position: absolute;
+}
+
+
+.landing_logo{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 150px;
+}
+
+
+.robin_container_wrapper{
+  position: absolute;
+  width: 100%;
+  top: 560px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.robin_container{
+  opacity: 0.85;
+  width: 684px;
   color: #252525;
   border: 10px solid transparent;
   border-radius: 10px;
-  /* -webkit-border-image: url(https://stardewvalley.net/wp-content/uploads/2017/12/menu_border_noshadowtopleft.png) 25 stretch;
-  -o-border-image: url(https://stardewvalley.net/wp-content/uploads/2017/12/menu_border_noshadowtopleft.png) 33 stretch; */
   border-image: url(https://stardewvalley.net/wp-content/uploads/2017/12/menu_border_noshadowtopleft.png) 15 stretch;
-  /* border-image-slice: 33%; */
   background-color: #ffffcc;
-  /* display: inline-block; */
+  display: flex;
+  padding: 5px 10px;
+
+}
+
+.robin_container p{
+  font-family: 'Stardew-Valley';
+  font-size: 26px;
+  margin-left: 10px;
+}
+
+#houses_container{
+  position: absolute;
+  width: 100%;
+  background: url(https://stardewvalley.net/wp-content/uploads/2017/12/sdv_divider.png) center center;
+  height: 541px;
+  margin-top: 800px;
+}
+
+#shop_container{
+  width: 100%;
+  height: 800px;
+  background: linear-gradient(-180deg, #fae791, #ffffcc);
+  position: relative;
+  top: 1339px;
 }
 
 
