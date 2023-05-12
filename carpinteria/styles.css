@@ -1,36 +1,37 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Nunito:extralight,extralightitalic,bold,italic,bolditalic,bolder,bolderitalic,black|Raleway:bold,italic,semibold);
+@font-face {
+  font-family:"Stardew-Valley";
+  src: url("./font/Stardew_Valley.ttf") format("truetype");
+}
 
-body {
+body{
+  margin: auto 0;
+  background: url(https://stardewvalley.net/wp-content/uploads/2017/12/stardewbackground.png) no-repeat 
+  fixed center center /cover;
+  image-rendering: pixelated;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+}
+
+.robin_container{
+  box-sizing: border-box;
   margin: 0 auto;
-  max-width: 60em;
-  font-family: 'Roboto Mono', sans-serif;
-  line-height: 1.5;
-  color: #2d354c;
+  width: 100%;
+  margin-bottom: 25px;
+  color: #252525;
+  border: 10px solid transparent;
+  border-radius: 10px;
+  /* -webkit-border-image: url(https://stardewvalley.net/wp-content/uploads/2017/12/menu_border_noshadowtopleft.png) 25 stretch;
+  -o-border-image: url(https://stardewvalley.net/wp-content/uploads/2017/12/menu_border_noshadowtopleft.png) 33 stretch; */
+  border-image: url(https://stardewvalley.net/wp-content/uploads/2017/12/menu_border_noshadowtopleft.png) 15 stretch;
+  /* border-image-slice: 33%; */
+  background-color: #ffffcc;
+  /* display: inline-block; */
 }
 
-button,
-input {
-  font: inherit;
-  color: inherit;
-}
 
-header{
-    width: 100%;
-    height: 10vh;
-    margin-bottom: 50px;
-    font-size: 30px;
-    font-weight: 600;
-    background-color: #2d354c;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-header img{
-  width: 80px
-}
-
-table#cart td,
+/* table#cart td,
 table input {
   border: 1px solid #dadada;
 }
@@ -56,4 +57,4 @@ input {
 .iconBig{
     width: 150px;
     margin: auto;
-}
+} */

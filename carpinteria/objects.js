@@ -19,4 +19,8 @@ export const ARTICULOS = {
         precio: 12,
         logo: "img/Copia de tronco.svg"
     }
+};
+
+export const srcs = {
+    oro: "https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png",
 }
