@@ -1,23 +1,23 @@
 export const ARTICULOS = {
-    llave: {
+    hacha: {
         nombre: "Llave",
         precio: 5,
-        logo: "img/Copia de llave.svg"
+        logo: "https://stardewvalleywiki.com/mediawiki/images/c/ce/Steel_Axe.png"
     },
     martillo: {
         nombre: "Martillo",
         precio: 10,
-        logo: "img/Copia de martillo.svg"
+        logo: "https://stardewvalleywiki.com/mediawiki/images/8/87/Hoe.png"
     },
     brocha: {
-        nombre: "Brocha",
+        nombre: "Sierra",
         precio: 4,
-        logo: "img/Copia de brocha.svg"
+        logo: "https://stardewvalleywiki.com/mediawiki/images/c/cd/Scythe.png"
     },
     tronco: {
         nombre: "Tronco",
         precio: 12,
-        logo: "img/Copia de tronco.svg"
+        logo: "https://stardewvalleywiki.com/mediawiki/images/e/ed/Hardwood.png"
     }
 };
 
