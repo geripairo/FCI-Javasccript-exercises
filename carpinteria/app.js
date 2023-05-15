@@ -10,13 +10,14 @@ let addMartillo = document.querySelector('.add_martillo');
 let addHacha = document.querySelector('.add_hacha');
 let addSierra = document.querySelector('.add_sierra');
 let addTronco = document.querySelector('.add_tronco');
+let addButton = document.querySelectorAll('.btn-add')
+/* let parentMartillo = document.querySelector('.add_martillo').parentNode
+console.log(parentMartillo); */
 
 // SELECCION PADRE DE TABLA TBODY
 let productParent = document.querySelector('tbody');
 
-const sumPrice = function(){
 
-}
 
 const createItem = function (product, modifyProductCLass, porductPush) {
     product.classList.add('add-inactive')
@@ -25,11 +26,11 @@ const createItem = function (product, modifyProductCLass, porductPush) {
         btn.classList.add('btn-modify-active')
     };
     products.push(porductPush);
-    createRow(porductPush);
+    // createRow(porductPush);
 };
 
 const createRow = function(item){    
-        let newProduct = document.createElement('tr') ;
+/*         let newProduct = document.createElement('tr') ;
         newProduct.setAttribute('class', 'product');
         newProduct.innerHTML =  
         `
@@ -40,19 +41,25 @@ const createRow = function(item){
         <td><span class="product_subtotal"></span><span><img src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png"
         alt="oro-icono"></span><span><button class="btn_remove">X</button></span></td>
         `
-        productParent.appendChild(newProduct);
-        let qty = document.querySelector('.product_qty') ;
-        qty.value = 1;
-        document.querySelector('.product_subtotal').innerText = item.precio * qty.value;    
-   
+        productParent.appendChild(newProduct);  */  
 };
 
+function addProduct(e){
+    let target = e.currentTarget.parentNode
+    console.log(target.children[2].innerText);
+    
+
+}
+
+addMartillo.addEventListener('click', addProduct);
+
+
 // EVENTO CLICK PARA BOTONES COMPRAR
-addMartillo.addEventListener('click', function(){
+/* addMartillo.addEventListener('click', function(){
     createItem(addMartillo, '.modify-martillo', martillo);
 });
 
-/* addHacha.addEventListener('click', function(){
+addHacha.addEventListener('click', function(){
     createItem(addHacha, '.modify-hacha', hacha);
 });
 addSierra.addEventListener('click', function(){
@@ -60,8 +67,8 @@ addSierra.addEventListener('click', function(){
 });
 addTronco.addEventListener('click', function(){
     createItem(addTronco, '.modify-tronco', tronco);
-});
- */
+}); */
+
 
 let cantidad = 0;
 let precio = 0;
