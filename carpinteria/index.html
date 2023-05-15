@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <!-- HEADER ////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////// -->
     <header>
@@ -26,53 +25,131 @@
         </nav>
     </header>
 
-    
     <main>
+        <!-- LANDING SECTION //////////////////////////////////////////////
+        /////////////////////////////////////////////////////////// -->
         <section id="landing_wrapper">
             <div class="landing_logo">
                 <img src="https://stardewvalley.net/wp-content/uploads/2017/12/main_logo.png" alt="Stardew Valley"
-                id="stardew_logo">
+                    id="stardew_logo">
             </div>
             <div class="robin_container_wrapper">
                 <div class="robin_container">
                     <img alt=" Robin Wave.png" src="https://stardewvalleywiki.com/mediawiki/images/0/0c/Robin_Wave.png"
-                    class="robin_portrait">
-                    <p>¡Pasa, pasa! ¿Qué necesitas? Todos nuestros productos son fabricados con materiales del valle. <br> No utilizamos intermediarios.</p>
-                </div>    
+                        class="robin_portrait">
+                    <p>¡Pasa, pasa! ¿Qué necesitas? Todos nuestros productos son fabricados con materiales del valle.
+                        <br> No utilizamos intermediarios.
+                    </p>
+                </div>
             </div>
         </section>
         <div id="houses_container"></div>
+
+        <!-- SHOP SECTION ///////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////// -->
         <div id="shop_container">
-            <div id="articulos">
-                <img id="robin_shop" src="https://stardewvalleywiki.com/mediawiki/images/f/fa/Robin_Happy.png" alt="Robin_feliz">
-                <div class="aritcles-wrapper">
-                    <div class="article martillo">
-                        <img src="https://stardewvalleywiki.com/mediawiki/images/8/87/Hoe.png" alt="Martillo-icono">
-                        <p>Martillo</p>
-                        <p>10<span><img src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png" alt="oro-icono"></span></p>
+            <h2 class="shop-title">¡Bienvenido a la tienda de Robin!</h2>
+            <div id="shop-wrapper">
+                <div id="shop-dialogue">
+                    <img id="robin_shop" src="https://stardewvalleywiki.com/mediawiki/images/f/fa/Robin_Happy.png"
+                        alt="Robin_feliz">
+                    <div>
+                        <p>¡Articulos para carpinteros de todo tipo a la venta!</p>
                     </div>
-                    <div class="article hacha">
-                        <img src="https://stardewvalleywiki.com/mediawiki/images/c/ce/Steel_Axe.png" alt="hacha-icono">
-                        <p>Hacha</p>
-                        <p>15<span><img src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png" alt="oro-icono"></span></p>
-                    </div>
-                    <div class="article sierra">
-                        <img src="https://stardewvalleywiki.com/mediawiki/images/c/cd/Scythe.png" alt="sierra-icono">
-                        <p>Sierra</p>
-                        <p>12<span><img src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png" alt="oro-icono"></span></p>
-                    </div>
-                    <div class="article tronco">
-                        <img src="https://stardewvalleywiki.com/mediawiki/images/e/ed/Hardwood.png" alt="tronco-icono">
-                        <p>Tronco</p>
-                        <p>5<span><img src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png" alt="oro-icono"></span></p>
+                </div>
+                <div id="articulos">
+                    <div class="articles-wrapper">
+                        <div class="article martillo">
+                            <img class="shopIcon" src="https://stardewvalleywiki.com/mediawiki/images/8/87/Hoe.png"
+                                alt="Martillo-icono">
+                            <p>Martillo</p>
+                            <p>10<span><img
+                                        src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png"
+                                        alt="oro-icono"></span></p>
+
+                            <button class="btn-shop add_martillo"><i class="fa-sharp fa-solid fa-cart-shopping"
+                                    style="color: #feebbe;"></i></button>
+                            <button class="btn-shop btn-modify modify-martillo  btn_sum"><i
+                                    class="fa-sharp fa-solid fa-plus" style="color: #feebbe;"></i></i></button>
+                            <button class="btn-shop btn-modify modify-martillo btn_minus"><i
+                                    class="fa-sharp fa-solid fa-minus" style="color: #feebbe;"></i></button>
+                        </div>
+                        <div class="article hacha">
+                            <img class="shopIcon"
+                                src="https://stardewvalleywiki.com/mediawiki/images/c/ce/Steel_Axe.png"
+                                alt="hacha-icono">
+                            <p>Hacha</p>
+                            <p>15<span><img
+                                        src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png"
+                                        alt="oro-icono"></span></p>
+                            <button class="btn-shop btn-add add_hacha"><i class="fa-sharp fa-solid fa-cart-shopping"
+                                    style="color: #feebbe;"></i></button>
+                            <button class="btn-shop btn-modify modify-hacha  btn_sum"><i
+                                    class="fa-sharp fa-solid fa-plus" style="color: #feebbe;"></i></i></button>
+                            <button class="btn-shop btn-modify modify-hacha btn_minus"><i
+                                    class="fa-sharp fa-solid fa-minus" style="color: #feebbe;"></i></button>
+
+                        </div>
+                        <div class="article sierra">
+                            <img class="shopIcon" src="https://stardewvalleywiki.com/mediawiki/images/c/cd/Scythe.png"
+                                alt="sierra-icono">
+                            <p>Sierra</p>
+                            <p>12<span><img
+                                        src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png"
+                                        alt="oro-icono"></span></p>
+                            <button class="btn-shop btn-add add_sierra"><i class="fa-sharp fa-solid fa-cart-shopping"
+                                    style="color: #feebbe;"></i></button>
+                            <button class="btn-shop btn-modify modify-sierra  btn_sum"><i
+                                    class="fa-sharp fa-solid fa-plus" style="color: #feebbe;"></i></i></button>
+                            <button class="btn-shop btn-modify modify-sierra btn_minus"><i
+                                    class="fa-sharp fa-solid fa-minus" style="color: #feebbe;"></i></button>
+
+
+                        </div>
+                        <div class="article tronco">
+                            <img class="shopIcon" src="https://stardewvalleywiki.com/mediawiki/images/e/ed/Hardwood.png"
+                                alt="tronco-icono">
+                            <p>Tronco</p>
+                            <p>5<span><img
+                                        src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png"
+                                        alt="oro-icono"></span></p>
+                            <button class="btn-shop btn-add add_tronco"><i class="fa-sharp fa-solid fa-cart-shopping"
+                                    style="color: #feebbe;"></i></button>
+                            <button class="btn-shop btn-modify modify-tronco  btn_sum"><i
+                                    class="fa-sharp fa-solid fa-plus" style="color: #feebbe;"></i></i></button>
+                            <button class="btn-shop btn-modify modify-tronco btn_minus"><i
+                                    class="fa-sharp fa-solid fa-minus" style="color: #feebbe;"></i></button>
+
+
+                        </div>
                     </div>
                 </div>
             </div>
-            <table></table>
+
+            <!-- CART SHOPPING ////////////////////////////////////////////////
+            //////////////////////////////// -->
+            <table class="cart_table cart_table_active">
+                <thead>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                </thead>
+                <tbody>
+                </tbody>
+                <tfoot>
+                    <td>Precio total</td>
+                    <td>Subtotal</td>
+                    <td>Iva</td>
+                    <td class="precio_total">Total: <span></span></td>
+                </tfoot>
+            </table>
         </div>
+
+
     </main>
-        <!-- DIV DE LLAVE -->
-        <!--         <div id="llave">
+    <!-- DIV DE LLAVE -->
+    <!--         <div id="llave">
             <h2>Llave</h2>
             <img class="iconBig" src="img/Copia de llave.svg" alt="">
             <p>Precio: 1€</p>
@@ -81,8 +158,8 @@
             <button id="remove">-</button>
         </div> -->
 
-        <!-- CARRO DE LA COMPRA -->
-        <!--  <table id="cart">
+    <!-- CARRO DE LA COMPRA -->
+    <!--  <table id="cart">
             <thead>
                 <tr>
                     <th>CARRITO DE LA COMPRA</th>
@@ -100,7 +177,8 @@
             </tfoot>
         </table> -->
 
-        <script type="module" src="app.js"></script>
+    <script type="module" src="app.js"></script>
+    <script src="https://kit.fontawesome.com/18ff6d286a.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

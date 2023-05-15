@@ -1,18 +1,78 @@
+// DICCIONARIO DE PRODUCTOS
 import { ARTICULOS } from "./objects.js";
+const {hacha, martillo, sierra, tronco} = ARTICULOS;
 
-let addButton = document.querySelector('.buyItem');
-let sumButton = document.querySelector('#add');
-let removeButton = document.querySelector('#remove');
-let contador = 0;
+// ARRAY PRODUCTOS (PARA IMPRIMIRLOS)
+let products = [];
 
-/* let createItem = function(){
-    let newItem = document.createElement('tr');
-    newItem.innerHTML = 
-} */
+// SELECCIONAMOS BOTONES DE COMPRAR
+let addMartillo = document.querySelector('.add_martillo');
+let addHacha = document.querySelector('.add_hacha');
+let addSierra = document.querySelector('.add_sierra');
+let addTronco = document.querySelector('.add_tronco');
 
-sumButton.addEventListener('click', () => {    
+// SELECCION PADRE DE TABLA TBODY
+let productParent = document.querySelector('tbody');
+
+const sumPrice = function(){
+
+}
+
+const createItem = function (product, modifyProductCLass, porductPush) {
+    product.classList.add('add-inactive')
+    const modifyBtns = document.querySelectorAll(modifyProductCLass);
+    for (let btn of modifyBtns) {
+        btn.classList.add('btn-modify-active')
+    };
+    products.push(porductPush);
+    createRow(porductPush);
+};
+
+const createRow = function(item){    
+        let newProduct = document.createElement('tr') ;
+        newProduct.setAttribute('class', 'product');
+        newProduct.innerHTML =  
+        `
+        <td class="product_name">${item.nombre}<span class="product_icon"></span></td>
+        <td class="product_price">${item.precio}<span><img src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png"
+        alt="oro-icono"></span></td>
+        <td><input class="product_qty" type="number" id="qty"></td>
+        <td><span class="product_subtotal"></span><span><img src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png"
+        alt="oro-icono"></span><span><button class="btn_remove">X</button></span></td>
+        `
+        productParent.appendChild(newProduct);
+        let qty = document.querySelector('.product_qty') ;
+        qty.value = 1;
+        document.querySelector('.product_subtotal').innerText = item.precio * qty.value;    
+   
+};
+
+// EVENTO CLICK PARA BOTONES COMPRAR
+addMartillo.addEventListener('click', function(){
+    createItem(addMartillo, '.modify-martillo', martillo);
+});
+
+/* addHacha.addEventListener('click', function(){
+    createItem(addHacha, '.modify-hacha', hacha);
+});
+addSierra.addEventListener('click', function(){
+    createItem(addSierra, '.modify-sierra', sierra);
+});
+addTronco.addEventListener('click', function(){
+    createItem(addTronco, '.modify-tronco', tronco);
+});
+ */
+
+let cantidad = 0;
+let precio = 0;
+
+
+
+
+
+/* sumButton.addEventListener('click', () => {    
     contador += 1;
-    document.querySelector('#noIvaPrice span').innerText = contador;
+    document.querySelector('.precio_total span').innerText = contador;
     document.querySelector('#ivaPrice span').innerText = contador + (contador * 0.21);        
 });
 
@@ -22,9 +82,10 @@ removeButton.addEventListener('click', () => {
         document.querySelector('#noIvaPrice span').innerText = contador;
         document.querySelector('#ivaPrice span').innerText = contador + (contador * 0.21);
     }    
-});
+}); */
+// console.log(hacha);
 
-addButton.addEventListener('click', () => {
-    document.createElement('')
-})
-// console.log(ARTICULOS.llave.precio);
+/* let createItem = function(){
+    let newItem = document.createElement('tr');
+    newItem.innerHTML = 
+} */
