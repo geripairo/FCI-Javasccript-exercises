@@ -1,98 +1,93 @@
 // DICCIONARIO DE PRODUCTOS
-import { ARTICULOS } from "./objects.js";
-const {hacha, martillo, sierra, tronco} = ARTICULOS;
+/* import { ARTICULOS } from "./objects.js";
+const {hacha, martillo, sierra, tronco} = ARTICULOS; */
 
-// ARRAY PRODUCTOS (PARA IMPRIMIRLOS)
-let products = [];
-
-// SELECCIONAMOS BOTONES DE COMPRAR
-let addMartillo = document.querySelector('.add_martillo');
-let addHacha = document.querySelector('.add_hacha');
-let addSierra = document.querySelector('.add_sierra');
-let addTronco = document.querySelector('.add_tronco');
-let addButton = document.querySelectorAll('.btn-add')
-/* let parentMartillo = document.querySelector('.add_martillo').parentNode
-console.log(parentMartillo); */
 
 // SELECCION PADRE DE TABLA TBODY
 let productParent = document.querySelector('tbody');
 
-
-
-const createItem = function (product, modifyProductCLass, porductPush) {
-    product.classList.add('add-inactive')
-    const modifyBtns = document.querySelectorAll(modifyProductCLass);
-    for (let btn of modifyBtns) {
-        btn.classList.add('btn-modify-active')
-    };
-    products.push(porductPush);
-    // createRow(porductPush);
-};
-
-const createRow = function(item){    
-/*         let newProduct = document.createElement('tr') ;
-        newProduct.setAttribute('class', 'product');
-        newProduct.innerHTML =  
-        `
-        <td class="product_name">${item.nombre}<span class="product_icon"></span></td>
-        <td class="product_price">${item.precio}<span><img src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png"
-        alt="oro-icono"></span></td>
-        <td><input class="product_qty" type="number" id="qty"></td>
-        <td><span class="product_subtotal"></span><span><img src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png"
-        alt="oro-icono"></span><span><button class="btn_remove">X</button></span></td>
-        `
-        productParent.appendChild(newProduct);  */  
-};
-
 function addProduct(e){
     let target = e.currentTarget.parentNode
-    console.log(target.children[2].innerText);
-    
+    let newProduct = document.createElement('tr') ;
+    newProduct.setAttribute('class', 'product');
+    newProduct.innerHTML =  
+    `
+    <td class="product_name"><span class="product_icon"><img class="shopIcon" src=${target.children[0].src}></span>${target.children[1].innerText}</td>
+    <td class="product_price">${target.children[2].innerText}<span><img src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png"
+    alt="oro-icono"></span></td>
+    <td><input class="quantity" id="qty" type="number" value="0" min="0" placeholder="Quantity" /></td>
+    <td><span class="product_subtotal">0</span><span><img src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png"
+    alt="oro-icono"></span></td>
+    <td><button class="btn_remove">X</button></td>
+    `
+    productParent.appendChild(newProduct); 
+    let newRemoveBtn = newProduct.querySelector('.btn_remove');
+    newRemoveBtn.addEventListener('click', removeProduct);
 
+    /* displayModify(e, target.children[4], target.children[5]); */
+};
+
+function removeProduct(e){
+    const target = e.currentTarget.parentNode.parentNode;
+    const parent = target.parentNode;
+    parent.removeChild(target);
 }
 
-addMartillo.addEventListener('click', addProduct);
+/* function displayModify(e, sumBtn, minusBtn){
 
+    let button = e.currentTarget
+    button.classList.add('add-inactive')
+    sumBtn.classList.add('btn-modify-active')
+    minusBtn.classList.add('btn-modify-active')
 
-// EVENTO CLICK PARA BOTONES COMPRAR
-/* addMartillo.addEventListener('click', function(){
-    createItem(addMartillo, '.modify-martillo', martillo);
-});
-
-addHacha.addEventListener('click', function(){
-    createItem(addHacha, '.modify-hacha', hacha);
-});
-addSierra.addEventListener('click', function(){
-    createItem(addSierra, '.modify-sierra', sierra);
-});
-addTronco.addEventListener('click', function(){
-    createItem(addTronco, '.modify-tronco', tronco);
-}); */
-
-
-let cantidad = 0;
-let precio = 0;
-
-
-
-
-
-/* sumButton.addEventListener('click', () => {    
-    contador += 1;
-    document.querySelector('.precio_total span').innerText = contador;
-    document.querySelector('#ivaPrice span').innerText = contador + (contador * 0.21);        
-});
-
-removeButton.addEventListener('click', () => {
-    if(contador > 0){
-        contador -= 1;
-        document.querySelector('#noIvaPrice span').innerText = contador;
-        document.querySelector('#ivaPrice span').innerText = contador + (contador * 0.21);
-    }    
-}); */
-// console.log(hacha);
-
-/* let createItem = function(){
-    let newItem = document.createElement('tr');
-    newItem.innerHTML = 
 } */
+
+function updateSubtotal(product) {
+    const price = product.querySelector('.product_price');
+    const quantity = product.querySelector('.quantity');
+    const result = parseFloat(price.innerText) * quantity.value;
+    const subtotal = product.querySelector('.product_subtotal');
+    return subtotal.innerText = result;  
+}
+
+function calculateAll() {  
+  
+    const products = document.getElementsByClassName('product');
+    let totalValue = 0;
+    [...products].forEach(product => {
+    
+      totalValue += parseFloat(updateSubtotal(product)); 
+  
+    });   
+  
+    const totalPrice = document.querySelector('.subtotal_price');
+    totalPrice.innerText = totalValue;
+
+    const iva = document.querySelector('.total_iva')
+    iva.innerText = totalValue * 0.21;
+    
+
+    const total = document.querySelector('.total_price')
+    total.innerText = parseFloat(totalPrice.innerText) + parseFloat(iva.innerText);  
+}
+
+// EJECUCIÓN FUNCIONES ADDEVENTLISTENER
+window.addEventListener('load', () => {    
+    const addButtons = document.querySelectorAll('.btn-add');
+    addButtons.forEach(btn => {
+    btn.addEventListener('click', addProduct);
+    });
+
+    const calculatePricesBtn = document.getElementById('update_total');
+    calculatePricesBtn.addEventListener('click', calculateAll);
+
+   
+});
+
+
+
+
+
+
+
+

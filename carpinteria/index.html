@@ -66,7 +66,6 @@
                             <p>10<span><img
                                         src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png"
                                         alt="oro-icono"></span></p>
-
                             <button class="btn-shop btn-add add_martillo"><i class="fa-sharp fa-solid fa-cart-shopping"
                                     style="color: #feebbe;"></i></button>
                             <button class="btn-shop btn-modify modify-martillo  btn_sum"><i
@@ -133,15 +132,21 @@
                     <th>Producto</th>
                     <th>Precio</th>
                     <th>Cantidad</th>
-                    <th>Subtotal</th>
+                    <th colspan="2">Subtotal</th>
                 </thead>
                 <tbody>
                 </tbody>
                 <tfoot>
-                    <td>Precio total</td>
-                    <td>Subtotal</td>
-                    <td>Iva</td>
-                    <td class="precio_total">Total: <span></span></td>
+                    <td><button id="update_total">ACTUALIZAR</button></td>
+                    <td>Subtotal: <span class="subtotal_price">0 </span><span><img
+                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png"
+                                alt="oro-icono"></span></td>
+                    <td>Iva: <span class="total_iva">0 </span><span><img
+                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png"
+                                alt="oro-icono"></span></td>
+                    <td colspan="2">Total: <span class="total_price">0 </span><span><img
+                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/10/Gold.png/18px-Gold.png"
+                                alt="oro-icono"></span></td>
                 </tfoot>
             </table>
         </div>
